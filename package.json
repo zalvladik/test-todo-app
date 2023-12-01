@@ -1,0 +1,17 @@
+{
+  "name": "test-todo-app",
+  "version": "1.0.0",
+  "license": "ISC",
+  "scripts": {
+    "start": "concurrently \"yarn start:backend\" \"yarn start:frontend\"",
+    "frontend": "cd frontend && yarn dev",
+    "backend": "cd backend && yarn dev"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "workspaces": [
+    "frontend",
+    "backend"
+  ]
+}

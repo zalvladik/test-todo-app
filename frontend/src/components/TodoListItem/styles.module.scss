@@ -1,0 +1,16 @@
+.item {
+  @apply flex
+  items-center
+  border-2
+  border-b-0
+  bg-gray-300
+  p-2
+  text-sm
+  last:border-b-2;
+  .text {
+    @apply text-slate-700;
+  }
+  .buttons_container {
+    @apply ml-auto;
+  }
+}

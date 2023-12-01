@@ -1,0 +1,26 @@
+.skeleton {
+  background: rgb(131, 131, 131);
+  margin-bottom: 10px;
+  height: 30px;
+  width: 100%;
+
+  transform: scale(1);
+  animation: pulse 4s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    background: rgba(131, 131, 131, 0.5);
+  }
+
+  50% {
+    transform: scale(1.05);
+    background: rgba(131, 131, 131, 1);
+  }
+
+  100% {
+    transform: scale(1);
+    background: rgba(131, 131, 131, 0.5);
+  }
+}

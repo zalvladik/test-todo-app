@@ -1,0 +1,31 @@
+.overlay_page {
+  @apply fixed
+    left-1/2
+    top-1/2
+    h-full
+    w-full
+    -translate-x-1/2
+    -translate-y-1/2
+    bg-gray-500/50;
+  .overlay_page__modal {
+    @apply absolute 
+    left-1/2
+    top-1/2
+    h-40
+    w-64
+    -translate-x-1/2
+    -translate-y-1/2
+    rounded-md
+    border-2
+    border-gray-700
+    bg-slate-400
+    p-3
+    pt-10;
+    .modal_buttons {
+      @apply absolute right-3 top-2 flex;
+    }
+    .modal_title {
+      @apply absolute top-3;
+    }
+  }
+}

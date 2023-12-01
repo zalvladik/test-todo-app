@@ -1,0 +1,20 @@
+.container {
+  @apply absolute
+    left-1/2
+    top-1/2
+    -translate-x-1/2
+    -translate-y-1/2
+    transform
+    overflow-hidden
+    rounded-md 
+    border-2 
+    border-gray-500;
+  .title_container {
+    @apply border-b-2
+         border-gray-500 bg-slate-400
+        p-1;
+  }
+  .todo_container {
+    @apply px-4 py-2;
+  }
+}

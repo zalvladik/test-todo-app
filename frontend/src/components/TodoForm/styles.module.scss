@@ -1,0 +1,7 @@
+.form {
+  @apply mb-1 flex;
+
+  & :last-child {
+    @apply ml-2;
+  }
+}

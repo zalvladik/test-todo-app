@@ -1,0 +1,10 @@
+.action_button {
+  @apply rounded-sm
+  p-1
+  px-2
+  py-1
+  transition-transform
+  last:ml-1
+  hover:scale-110
+  focus:scale-110;
+}

@@ -1,0 +1,7 @@
+.button {
+  @apply rounded-md
+  p-1
+  transition-transform
+  hover:scale-110
+  focus:scale-110;
+}
