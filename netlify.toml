@@ -1,0 +1,10 @@
+[build]
+  command = "yarn start"
+
+[build.environment]
+  NODE_VERSION = "20.10.0"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
