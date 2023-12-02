@@ -1,34 +1,30 @@
-import { useState } from 'react'
+import { useState } from "react";
 
-import ActionButton from 'src/components/Buttons/ActionButton'
-import CloseIcon from 'src/assets/SVG/CloseIcon'
-import TextArea from 'src/components/TextArea'
-import Title from 'src/components/Title'
-import SubmitButton from 'src/components/Buttons/SubmitButton'
+import ActionButton from "src/components/Buttons/ActionButton";
+import CloseIcon from "src/assets/SVG/CloseIcon";
+import TextArea from "src/components/TextArea";
+import Title from "src/components/Title";
+import SubmitButton from "src/components/Buttons/SubmitButton";
 
-import usePutTodo from 'src/hooks/usePutTodo'
+import usePutTodo from "src/hooks/usePutTodo";
 
-import { useModal } from 'src/components/ModalContext'
+import { useModal } from "src/components/ModalContext";
 
-import styles from 'src/components/ModalPutToDo/styles.module.scss'
+import styles from "src/components/ModalPutToDo/styles.module.scss";
 
 const ModalPutToDo = (): JSX.Element => {
-  const { mutate, isLoading } = usePutTodo()
-  const { closeModal, modalData } = useModal()
+  const { mutate, isLoading } = usePutTodo();
+  const { closeModal, modalData } = useModal();
 
-  const [text, setText] = useState('')
-
-  const handleInputChange = (value: string): void => {
-    setText(value)
-  }
+  const [text, setText] = useState("");
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
+    event.preventDefault();
     if (!text.trim()) {
-      return
+      return;
     }
-    mutate({ text, id: modalData })
-  }
+    mutate({ text, id: modalData });
+  };
 
   return (
     <div className={styles.overlay_page}>
@@ -40,7 +36,7 @@ const ModalPutToDo = (): JSX.Element => {
             disabled={isLoading}
           />
           <ActionButton
-            bgColor={'bg-red-500'}
+            bgColor={"bg-red-500"}
             onClick={() => closeModal()}
             icon={<CloseIcon />}
           />
@@ -51,12 +47,14 @@ const ModalPutToDo = (): JSX.Element => {
 
         <TextArea
           value={text}
-          onChange={handleInputChange}
+          onChange={(value) => {
+            setText(value);
+          }}
           placeholder="Type the text..."
         />
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default ModalPutToDo
+export default ModalPutToDo;

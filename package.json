@@ -4,8 +4,8 @@
   "license": "ISC",
   "scripts": {
     "start": "concurrently \"yarn start:backend\" \"yarn start:frontend\"",
-    "frontend": "cd frontend && yarn dev",
-    "backend": "cd backend && yarn dev"
+    "start:frontend": "cd frontend && yarn dev",
+    "start:backend": "cd backend && yarn dev"
   },
   "devDependencies": {
     "concurrently": "^8.2.2"

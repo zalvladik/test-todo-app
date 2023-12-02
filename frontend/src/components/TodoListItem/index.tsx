@@ -31,10 +31,6 @@ const TodoListItem = ({
     mutate({ isChecked: value, id });
   };
 
-  const deleteTodo = (): void => {
-    deleteMutate(id);
-  };
-
   return (
     <li className={styles.item}>
       <CheckBox onClick={toggleCheckBox} isChecked={toggle} />
@@ -49,7 +45,9 @@ const TodoListItem = ({
         />
         <ActionButton
           bgColor={"bg-red-500"}
-          onClick={deleteTodo}
+          onClick={() => {
+            deleteMutate(id);
+          }}
           disabled={isLoading}
           icon={<Trash />}
         />

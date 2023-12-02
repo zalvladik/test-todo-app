@@ -10,10 +10,6 @@ const TodoForm = (): JSX.Element => {
   const { mutate, isLoading } = useAddTodo();
   const [inputValue, setInputValue] = useState("");
 
-  const handleInputChange = (value: string): void => {
-    setInputValue(value);
-  };
-
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     if (!inputValue.trim()) {
@@ -24,7 +20,12 @@ const TodoForm = (): JSX.Element => {
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
-      <Input value={inputValue} onChange={handleInputChange} />
+      <Input
+        value={inputValue}
+        onChange={(value) => {
+          setInputValue(value);
+        }}
+      />
 
       <SubmitButton bgColor="bg-blue-500" disabled={isLoading} />
     </form>
