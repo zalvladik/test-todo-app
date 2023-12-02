@@ -3,7 +3,7 @@ import { QueryClient, QueryClientProvider } from 'react-query'
 import { ModalProvider } from 'src/components/ModalContext'
 import TodoPage from 'src/pages/TodoPage'
 
-import './App.css'
+import 'src/App.css'
 
 const queryClient = new QueryClient({
   defaultOptions: {
