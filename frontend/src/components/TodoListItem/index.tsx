@@ -12,6 +12,7 @@ import Note from "src/assets/SVG/Note";
 import usePutCheckBox from "src/hooks/usePutCheckBox";
 import useDeleteTodo from "src/hooks/useDeleteTodo";
 
+import { Colors } from "src/constants";
 import styles from "src/components/TodoListItem/styles.module.scss";
 
 const TodoListItem = ({
@@ -37,14 +38,14 @@ const TodoListItem = ({
       <p className={styles.text}>{text}</p>
       <div className={styles.buttons_container}>
         <ActionButton
-          bgColor={"bg-green-500"}
+          bgColor={Colors.GREEN_500}
           onClick={() => {
             openModal(id);
           }}
           icon={<Note />}
         />
         <ActionButton
-          bgColor={"bg-red-500"}
+          bgColor={Colors.RED_500}
           onClick={() => {
             deleteMutate(id);
           }}

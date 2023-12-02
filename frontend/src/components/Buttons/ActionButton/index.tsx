@@ -1,6 +1,8 @@
-import { ActionButtonProps } from 'src/components/Buttons/ActionButton/types'
+import { ActionButtonProps } from "src/components/Buttons/ActionButton/types";
 
-import styles from 'src/components/Buttons/ActionButton/styles.module.scss'
+import styles from "src/components/Buttons/ActionButton/styles.module.scss";
+
+import { Colors } from "src/constants";
 
 const ActionButton = ({
   icon,
@@ -10,14 +12,16 @@ const ActionButton = ({
 }: ActionButtonProps): JSX.Element => {
   return (
     <button
-      className={`${styles.action_button} ${disabled ? 'bg-gray-800' : bgColor}`}
+      className={`${styles.action_button} ${
+        disabled ? Colors.GRAY_800 : bgColor
+      }`}
       type="button"
       onClick={onClick}
       disabled={disabled}
     >
       {icon}
     </button>
-  )
-}
+  );
+};
 
-export default ActionButton
+export default ActionButton;

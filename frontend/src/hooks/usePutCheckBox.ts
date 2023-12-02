@@ -1,7 +1,7 @@
 import { useQueryClient, useMutation } from "react-query";
 import { toast } from "react-toastify";
 
-import { CacheKeys } from "src/constants";
+import { CacheKeys, StorageKeys } from "src/constants";
 import { PutCheckBoxProps } from "src/types/api";
 import { useModal } from "src/components/ModalContext";
 
@@ -17,7 +17,7 @@ const usePutCheckBox = () => {
     onSuccess: (newData) => {
       queryClient.setQueryData(CacheKeys.TODOS, newData); //react-quary
 
-      localStorage.setItem("toDoArray", JSON.stringify(newData)); //localStorage
+      localStorage.setItem(StorageKeys.TO_DO_ARRAY, JSON.stringify(newData)); //localStorage
 
       closeModal();
 

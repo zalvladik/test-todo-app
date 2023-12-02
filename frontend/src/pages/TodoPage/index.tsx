@@ -9,13 +9,12 @@ import ModalPutToDo from "src/components/ModalPutToDo";
 
 import { useModal } from "src/components/ModalContext";
 import useLocalStorage from "src/hooks/useLocalStorage";
-
 import styles from "src/pages/TodoPage/styles.module.scss";
-import { CacheKeys } from "src/constants";
+import { CacheKeys, StorageKeys } from "src/constants";
 import { TodosResponseT } from "src/types/api";
 
 const TodoPage = (): JSX.Element => {
-  const collection = useLocalStorage("toDoArray");
+  const collection = useLocalStorage(StorageKeys.TO_DO_ARRAY);
   const queryClient = useQueryClient();
   queryClient.setQueryData(CacheKeys.TODOS, collection);
 

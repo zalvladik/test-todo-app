@@ -4,6 +4,7 @@ import Input from "src/components/Input";
 import SubmitButton from "src/components/Buttons/SubmitButton";
 import useAddTodo from "src/hooks/useAddTodo";
 
+import { Colors } from "src/constants";
 import styles from "src/components/TodoForm/styles.module.scss";
 
 const TodoForm = (): JSX.Element => {
@@ -27,7 +28,7 @@ const TodoForm = (): JSX.Element => {
         }}
       />
 
-      <SubmitButton bgColor="bg-blue-500" disabled={isLoading} />
+      <SubmitButton bgColor={Colors.BLUE_500} disabled={isLoading} />
     </form>
   );
 };

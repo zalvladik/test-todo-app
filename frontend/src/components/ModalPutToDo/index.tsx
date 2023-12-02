@@ -10,6 +10,7 @@ import usePutTodo from "src/hooks/usePutTodo";
 
 import { useModal } from "src/components/ModalContext";
 
+import { Colors} from 'src/constants'
 import styles from "src/components/ModalPutToDo/styles.module.scss";
 
 const ModalPutToDo = (): JSX.Element => {
@@ -32,11 +33,11 @@ const ModalPutToDo = (): JSX.Element => {
         <div className={styles.modal_buttons}>
           <SubmitButton
             sx="p-0 px-2 mr-2"
-            bgColor="bg-blue-500"
+            bgColor={Colors.BLUE_500}
             disabled={isLoading}
           />
           <ActionButton
-            bgColor={"bg-red-500"}
+            bgColor={Colors.RED_500}
             onClick={() => closeModal()}
             icon={<CloseIcon />}
           />

@@ -1,7 +1,7 @@
 import { useQuery } from "react-query";
 import { toast } from "react-toastify";
 
-import { CacheKeys } from "src/constants";
+import { CacheKeys, StorageKeys } from "src/constants";
 
 import getTodos from "src/services/api/getToDos";
 
@@ -11,7 +11,7 @@ const usegetTodos = () => {
     () => getTodos(),
     {
       onSuccess(data) {
-        localStorage.setItem("toDoArray", JSON.stringify(data)); //localStorage
+        localStorage.setItem(StorageKeys.TO_DO_ARRAY, JSON.stringify(data)); //localStorage
       },
       onError: (error: Error) => {
         toast.error(error.message, {

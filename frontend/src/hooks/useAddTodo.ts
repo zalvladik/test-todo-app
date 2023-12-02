@@ -1,7 +1,7 @@
 import { useQueryClient, useMutation } from "react-query";
 import { toast } from "react-toastify";
 
-import { CacheKeys } from "src/constants";
+import { CacheKeys, StorageKeys } from "src/constants";
 
 import addTodo from "src/services/api/addTodo";
 
@@ -14,7 +14,7 @@ const useAddTodo = () => {
     onSuccess: (newData) => {
       queryClient.setQueryData(CacheKeys.TODOS, newData); //react-quary
 
-      localStorage.setItem("toDoArray", JSON.stringify(newData)); //localStorage
+      localStorage.setItem(StorageKeys.TO_DO_ARRAY, JSON.stringify(newData)); //localStorage
 
       toast.success("Created ToDo", {
         position: "top-right",
